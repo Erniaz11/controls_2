@@ -410,36 +410,3 @@ class MainWindow(QMainWindow):
 
 def create_main_window() -> MainWindow:
     return MainWindow()
-
-
-
-class AboutDialog(QDialog):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setWindowTitle("О программе")
-        layout = QVBoxLayout()
-        layout.addWidget(QLabel("Программа для управления студентами и курсами."))
-        layout.addWidget(QLabel("Автор: Ваше имя"))
-        close_button = QPushButton("Закрыть")
-        close_button.clicked.connect(self.accept)
-        layout.addWidget(close_button)
-        self.setLayout(layout)
-
-
-
-
-
-class HelpDialog(QDialog):
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setWindowTitle("Помощь")
-        layout = QVBoxLayout()
-        layout.addWidget(QLabel("Для добавления студента или курса нажмите кнопку 'Добавить'."))
-        layout.addWidget(QLabel("Для изменения выберите запись'Изменить'."))
-        layout.addWidget(QLabel("Для удаления выберите запись'Удалить'."))
-        close_button = QPushButton("Закрыть")
-        close_button.clicked.connect(self.accept)
-        layout.addWidget(close_button)
-        self.setLayout(layout)
-
-
